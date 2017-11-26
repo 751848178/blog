@@ -38,10 +38,10 @@
 	}
 
 	@media (max-width: 1000px) {
-		.article-list {
+		.main .article-list {
 			width:100%;
 		}
-		.cards{display:none;}
+		.main .cards{display:none;}
 	}
 
 	@media (min-width: 768px) {

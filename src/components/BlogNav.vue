@@ -35,7 +35,7 @@
 		</div>
 		<div class="nav-bottom">
 			<div class="nav-item">
-				<router-link to="/foo">
+				<router-link to="/">
 					<img src="http://cn.vuejs.org/images/logo.png">
 					<label>文章列表</label>
 				</router-link>
