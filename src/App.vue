@@ -25,12 +25,11 @@
 		text-align: center;
 		color: #2c3e50;
 	}
-	@media (max-width: 450px) {
+	@media (max-width: 1200px) {
 		.wrap {
 			width:100%;
 		}
 	}
-
 	@media (min-width: 1200px) {
 		.wrap {
 			width:1200px;

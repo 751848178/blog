@@ -1,10 +1,10 @@
 <template>
 	<div class="main wrap">
-		<Row v-for="i in 20" :gutter="10">
-			<i-col span="20">
+		<Row :gutter="10">
+			<i-col class="article-list" span="20">
 				<Card>123456789</Card>
 			</i-col>
-			<i-col span="4">
+			<i-col class="cards" span="4">
 				<Card>1</Card>
 			</i-col>
 		</Row>
@@ -30,11 +30,18 @@
 </script>
 
 <style>
-	.main{position:absolute;top:0;right:0;left:0;overflow-x:hidden;}
+	.main{position:absolute;top:0;right:0;left:0;padding:20px 0;overflow-x:hidden;}
 	@media (max-width: 450px) {
 		.main {
 			margin-bottom:60px;
 		}
+	}
+
+	@media (max-width: 1000px) {
+		.article-list {
+			width:100%;
+		}
+		.cards{display:none;}
 	}
 
 	@media (min-width: 768px) {
