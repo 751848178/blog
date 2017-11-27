@@ -11,6 +11,16 @@ export default new Router({
 			path: '/',
 			name: 'Main',
 			component: Main
+		},
+		{
+			path: '/article/:id',
+			name: 'article',
+			component: Main
+		},
+		{
+			path: '/articles',
+			name: 'articles',
+			component: Main
 		}
 	]
 });
