@@ -50,7 +50,7 @@
 	.article-item{width:100%;margin-bottom:20px;font-size:14px;color:#666666;letter-spacing:0.5px;line-height:26px;text-align:left;}
 	.article-item h5{margin:8px 0 3px;height:26px;letter-spacing:0.57px;font-size:16px;color:#333;font-weight:normal;}
 	.article-item .release-time{float:right;display:inline-block;width:105px;color:#999;}
-	.article-item p{margin-bottom:10px;max-height:66px;}
+	.article-item p{margin-bottom:10px;max-height:56px;overflow: hidden;}
 	.article-img{width:100%;height:280px;background-repeat:no-repeat;background-size: cover;}
-	.atricle-tags{border-top:1px solid #EEE;width:100%;height:66px;line-height:66px;}
+	.atricle-tags{border-top:1px solid #EEE;width:100%;height:66px;line-height:66px;overflow: hidden;}
 </style>

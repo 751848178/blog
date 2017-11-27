@@ -68,6 +68,10 @@
 		.main .article-list {
 			width:100%;
 		}
+		.main a{
+			display: block;
+			padding: 0 10px;
+		}
 		.main .cards{display:none;}
 	}
 
