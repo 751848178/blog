@@ -12,8 +12,10 @@
 					<p>是由数银财富金融外包服务(北京)有限公司打造的互联网供应链金融 网络借贷中介服务平台，成立于2017年2月，是一家以信息化技术为核心，以电子商 务、供应链管理和金融服务为依托的高新技术企业。 我们专业服务于能源业、汽车行业、建筑业、零售业和金融业的供应链金。</p>
 				</div>
 				<div v-if="item.tags.length > 0" class="atricle-tags">
-					<router-link v-for="tag in item.tags" :to="/tag/ + tag.id" :key="tag.id">
-						<Tag>{{tag.name}}</Tag>
+					<router-link v-for="tag in item.tags" tag="span" :to="/tag/ + tag.id" :key="tag.id">
+						<a>
+							<Tag>{{tag.name}}</Tag>
+						</a>
 					</router-link>
 				</div>
 			</Card>
