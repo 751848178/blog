@@ -1,13 +1,16 @@
 <template>
 	<div class="blog-navbar">
 		<div class="nav-top">
-			<Menu mode="horizontal" theme="light" active-name="1">
+			<Menu mode="horizontal" theme="light"  :active-name="$route.path">
 				<div class="wrap nav-links">
-					<MenuItem name="1">
+					<MenuItem style="border-bottom:none;">
+						<router-link to="/" class="logo"></router-link>
+					</MenuItem>
+					<MenuItem name="/">
 						<router-link to="/">首页</router-link>
 					</MenuItem>
-					<MenuItem name="2">
-						<router-link to="/articles">文章列表</router-link>
+					<MenuItem name="/about">
+						<router-link to="/about">关于</router-link>
 					</MenuItem>
 				</div>
 			</Menu>
@@ -16,7 +19,7 @@
 			<div class="nav-item">
 				<router-link to="/">
 					<img src="../assets/logo.png">
-					<label>文章列表</label>
+					<label>首页</label>
 				</router-link>
 			</div>
 			<div class="nav-item">
@@ -59,6 +62,7 @@
 </script>
 
 <style>
+	.logo{width:200px;height:60px;background:url(http://via.placeholder.com/220x60) center no-repeat;}
 	.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
 		height:60px;
 	}

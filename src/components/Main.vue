@@ -2,18 +2,19 @@
 	<div class="main wrap">
 		<Row :gutter="10">
 			<articles :list="articles"></articles>
-			<i-col class="cards" span="5">
-				<Card>1</Card>
-			</i-col>
+			<div class="search-bar">
+				<Input icon="android-search" placeholder="不要忘记按回车哦~" style="width:100%;"></Input>
+			</div>
+			<cards></cards>
 		</Row>
 	</div>
 </template>
 
 <script>
-	import {Card} from 'iview';
-	import ICol from "../../node_modules/iview/src/components/grid/col.vue";
+	import {Input} from 'iview';
 	import Row from "../../node_modules/iview/src/components/grid/row.vue";
-	import Articles from "./Articles.vue";
+	import Articles from "@/components/Articles.vue";
+	import Cards from "@/components/Cards.vue";
 	export default {
 		name: 'Main',
 		data () {
@@ -48,36 +49,26 @@
 			};
 		},
 		components: {
-			ICol,
 			Row,
-			Card,
-			Articles
+			Articles,
+			Input,
+			Cards
 		}
 	};
 </script>
 
 <style>
-	.main{position:absolute;top:0;right:0;left:0;padding:20px 0;overflow-x:hidden;}
-	@media (max-width: 450px) {
-		.main {
-			margin-bottom:60px;
-		}
+
+	.search-bar {
+		float: left;
+		margin-bottom: 20px;
+		padding: 0 5px;
+		width: 20.83333333%;
+		height: 30px;
 	}
 
-	@media (max-width: 1000px) {
-		.main .article-list {
-			width:100%;
-		}
-		.main a{
-			display: block;
-			padding: 0 10px;
-		}
-		.main .cards{display:none;}
-	}
-
-	@media (min-width: 768px) {
-		.main {
-			top:60px;
-		}
+	.new-articles{
+		margin-bottom:20px;
+		text-align:left;
 	}
 </style>
