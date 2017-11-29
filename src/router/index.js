@@ -15,13 +15,23 @@ export default new Router({
 			component: Main
 		},
 		{
+			path: '/articles',
+			name: 'Articles',
+			component: Main
+		},
+		{
+			path: '/tag/:id',
+			name: 'Tag',
+			component: Main
+		},
+		{
 			path: '/article/:id',
-			name: 'article',
+			name: 'Article',
 			component: Article
 		},
 		{
 			path: '/about',
-			name: 'about',
+			name: 'About',
 			component: About
 		}
 	]
