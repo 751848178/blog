@@ -106,6 +106,8 @@
 		.main .cards {
 			display: none;
 		}
+
+		.article,.about{margin:0 10px;}
 	}
 
 	@media (min-width: 768px){
