@@ -27,6 +27,7 @@ module.exports = {
 		'no-tabs': ['off'],
 		'quotes': ['off'],
 		"space-infix-ops": ['off'],
+		"space-before-function-paren": ["off"],
 		"semi": [2, "always"]
 	}
 }

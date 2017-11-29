@@ -1,10 +1,10 @@
 <template>
 	<div class="blog-navbar">
 		<div class="nav-top">
-			<Menu mode="horizontal" theme="light"  :active-name="$route.path">
+			<Menu mode="horizontal" theme="light" :active-name="$route.path">
 				<div class="wrap nav-links">
-					<MenuItem style="border-bottom:none;">
-						<router-link to="/" class="logo"></router-link>
+					<MenuItem name="/" style="border-bottom:none;">
+						<router-link to="/" class="logo" style="background-image:url(http://yijiebuyi.com/images/logo.png);"></router-link>
 					</MenuItem>
 					<MenuItem name="/">
 						<router-link to="/">首页</router-link>
@@ -67,7 +67,10 @@
 		height:60px;
 	}
 	.blog-navbar {
+		position:fixed;
+		left:0;
 		width: 100%;
+		height:60px;
 		z-index:100;
 	}
 
@@ -137,10 +140,7 @@
 
 	@media (max-width: 450px) {
 		.blog-navbar {
-			position: fixed;
-			left: 0;
 			bottom: 0;
-			height: 60px;
 		}
 
 		.nav-top {
@@ -154,6 +154,10 @@
 	}
 
 	@media (min-width: 768px) {
+		.blog-navbar {
+			top: 0;
+		}
+
 		.nav-top {
 			display: block;
 		}

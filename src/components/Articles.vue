@@ -11,7 +11,7 @@
 					</h5>
 					<p>是由数银财富金融外包服务(北京)有限公司打造的互联网供应链金融 网络借贷中介服务平台，成立于2017年2月，是一家以信息化技术为核心，以电子商 务、供应链管理和金融服务为依托的高新技术企业。 我们专业服务于能源业、汽车行业、建筑业、零售业和金融业的供应链金。</p>
 				</div>
-				<div v-if="item.tags.length > 0" class="atricle-tags">
+				<div v-if="item.tags.length > 0" class="article-tags">
 					<Tag v-for="tag in tags" :key="tag.id"><router-link :to="/tag/ + tag.id">{{tag.name}}</router-link></Tag>
 				</div>
 			</Card>
@@ -45,11 +45,11 @@
 </script>
 
 <style>
-	.article-item{width:100%;margin-bottom:20px;font-size:14px;color:#666666;letter-spacing:0.5px;line-height:26px;text-align:left;}
-	.article-item h5{margin:8px 0 3px;height:26px;letter-spacing:0.57px;font-size:16px;color:#333;font-weight:normal;}
-	.article-item .release-time{float:right;display:inline-block;width:105px;color:#999;}
-	.article-item p{margin-bottom:10px;max-height:56px;overflow: hidden;}
-	.article-img{width:100%;height:280px;background-repeat:no-repeat;background-size: cover;}
-	.atricle-tags{border-top:1px solid #EEE;width:100%;height:66px;line-height:66px;overflow: hidden;}
-	.atricle-tags a{display:inline-block;height:100%;}
+	.article-list .article-item{width:100%;margin-bottom:20px;font-size:14px;color:#666666;letter-spacing:0.5px;line-height:26px;text-align:left;}
+	.article-list .article-item h5{margin:8px 0 3px;height:26px;letter-spacing:0.57px;font-size:16px;color:#333;font-weight:normal;}
+	.article-list .article-item .release-time{float:right;display:inline-block;width:105px;color:#999;}
+	.article-list .article-item p{margin-bottom:10px;max-height:56px;overflow: hidden;}
+	.article-list .article-img{width:100%;height:280px;background-repeat:no-repeat;background-size: cover;}
+	.article-list .article-tags{border-top:1px solid #EEE;width:100%;height:66px;line-height:66px;overflow: hidden;}
+	.article-list .article-tags a{display:inline-block;height:100%;}
 </style>
