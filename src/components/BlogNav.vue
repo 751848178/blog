@@ -12,6 +12,9 @@
 					<MenuItem name="/about">
 						<router-link to="/about">关于</router-link>
 					</MenuItem>
+					<MenuItem name="/tools/uplowercase">
+						<router-link to="/tools/uplowercase">工具</router-link>
+					</MenuItem>
 				</div>
 			</Menu>
 		</div>
@@ -23,10 +26,10 @@
 				</router-link>
 			</div>
 			<div class="nav-item">
-				<circle-menu type="middle-around" :number='4' animate="animated jello" mask='white' :circle="true" btn>
+				<circle-menu type="middle-around" :number='4' animate="animated jello" mask='white' :circle="true" v-routeChange="$route.path" btn>
 					<i slot="item_btn"></i>
 					<router-link to="/foo1" slot="item_1" class="fa fa-twitter fa-lg"></router-link>
-					<router-link to="/foo2" slot="item_2" class="fa fa-weixin fa-lg"></router-link>
+					<router-link to="/tools/uplowercase" slot="item_2" class="fa fa-gears fa-lg"></router-link>
 					<router-link to="/foo3" slot="item_3" class="fa fa-weibo fa-lg"></router-link>
 					<router-link to="/foo4" slot="item_4" class="fa fa-github fa-lg"></router-link>
 				</circle-menu>
@@ -49,6 +52,20 @@
 		name: 'BlogNav',
 		data () {
 			return {};
+		},
+		methods: {},
+		directives: {
+			routeChange: {
+				update: function (el, val) {
+					if (el.getElementsByClassName("oy-menu-group")[0].classList.contains("open")) {
+						if (val.value === "/tools/uplowercase" || val.value === "/foo1" || val.value === "/foo3" || val.value === "/foo4") {
+							el.getElementsByClassName("oy-menu-btn")[0].click();
+							el.getElementsByClassName("oy-menu-group")[0].classList.remove("open");
+							el.getElementsByClassName("oy-mask-white")[0].style.display = "none";
+						}
+					}
+				}
+			}
 		},
 		components: {
 			CircleMenu,

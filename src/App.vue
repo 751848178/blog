@@ -86,7 +86,7 @@
 		.main {
 			margin-bottom: 60px;
 		}
-		.article,.about{margin:0 10px;}
+		.article,.about{margin:0 20px;}
 	}
 
 	@media (max-width: 1000px) {
@@ -127,5 +127,8 @@
 			height:60px;
 			z-index: 101;
 		}
+	}
+	@media (min-width: 1000px) and (max-width:1200px){
+		.main{padding:0 10px;}
 	}
 </style>
