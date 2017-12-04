@@ -6,11 +6,10 @@
 </template>
 
 <script>
-	import BlogNav from "@/components/BlogNav";
 	export default {
 		name: 'app',
 		components: {
-			BlogNav
+			BlogNav: resolve => require(["@/components/BlogNav"], resolve)
 		}
 	};
 </script>

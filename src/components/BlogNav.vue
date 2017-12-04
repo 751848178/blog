@@ -4,7 +4,7 @@
 			<Menu mode="horizontal" theme="light" :active-name="$route.path">
 				<div class="wrap nav-links">
 					<MenuItem name="/" style="border-bottom:none;">
-						<router-link to="/" class="logo" style="background-image:url(http://yijiebuyi.com/images/logo.png);"></router-link>
+						<router-link to="/" class="logo"></router-link>
 					</MenuItem>
 					<MenuItem name="/">
 						<router-link to="/">首页</router-link>
@@ -45,7 +45,8 @@
 </template>
 
 <script>
-	import CircleMenu from "vue-circle-menu";
+	// eslint-disable-next-line
+	//import CircleMenu from "vue-circle-menu";
 	import {Menu, Icon} from "iview";
 
 	export default {
@@ -68,7 +69,7 @@
 			}
 		},
 		components: {
-			CircleMenu,
+			CircleMenu: resolve => require(["vue-circle-menu"], resolve),
 			Menu,
 			Icon,
 			MenuItem: Menu.Item,
@@ -79,7 +80,7 @@
 </script>
 
 <style>
-	.logo{width:200px;height:60px;background:url(http://via.placeholder.com/220x60) center no-repeat;}
+	.logo{width:200px;height:60px;background:url(/static/images/logo.png) center -1px no-repeat;}
 	.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
 		height:60px;
 	}

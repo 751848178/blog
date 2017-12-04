@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import "babel-polyfill";
+// eslint-disable-next-line
+import {Promise} from "es6-promise-polyfill";
 import Main from '@/components/Main';
-import About from '@/components/About';
+/* import About from '@/components/About';
 import Article from '@/components/Article';
-import Uplowercase from '@/components/tools/Uplowercase';
+import Uplowercase from '@/components/tools/Uplowercase'; */
 
 Vue.use(Router);
 
@@ -28,17 +31,17 @@ export default new Router({
 		{
 			path: '/article/:id',
 			name: 'Article',
-			component: Article
+			component: resolve => require(["@/components/Article"], resolve)   // 异步加载组件
 		},
 		{
 			path: '/about',
 			name: 'About',
-			component: About
+			component: resolve => require(["@/components/About"], resolve)
 		},
 		{
 			path: '/tools/uplowercase',
 			name: 'Uplowercase',
-			component: Uplowercase
+			component: resolve => require(["@/components/tools/Uplowercase"], resolve)
 		}
 	]
 });

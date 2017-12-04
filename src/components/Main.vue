@@ -14,8 +14,6 @@
 <script>
 	import {Input} from 'iview';
 	import Row from "../../node_modules/iview/src/components/grid/row.vue";
-	import Articles from "@/components/Articles.vue";
-	import Cards from "@/components/Cards.vue";
 	export default {
 		name: 'Main',
 		data () {
@@ -51,9 +49,9 @@
 		},
 		components: {
 			Row,
-			Articles,
+			Articles: resolve => require(["@/components/Articles"], resolve),
 			Input,
-			Cards
+			Cards: resolve => require(["@/components/Cards"], resolve)
 		}
 	};
 </script>

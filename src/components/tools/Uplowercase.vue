@@ -1,7 +1,7 @@
 <template>
 	<div class="main wrap uplowercase">
 		<div class="case-region">
-			<textarea v-model="oldVal"></textarea>
+			<Input v-model="oldVal" type="textarea" :autosize="{minRows: 10,maxRows: 10}" placeholder="输入待转内容"></Input>
 		</div>
 		<div class="case-region case-btns">
 			<ButtonGroup>
@@ -10,13 +10,13 @@
 			</ButtonGroup>
 		</div>
 		<div class="case-region">
-			<textarea v-model="newVal"></textarea>
+			<Input v-model="newVal" type="textarea" :autosize="{minRows: 10,maxRows: 10}" placeholder="转换后的内容"></Input>
 		</div>
 	</div>
 </template>
 
 <script>
-	import {Button} from "iview";
+	import {Button, Input} from "iview";
 	export default {
 		name: "Uplowercase",
 		data () {
@@ -35,14 +35,15 @@
 		},
 		components: {
 			Button,
-			ButtonGroup: Button.Group
+			ButtonGroup: Button.Group,
+			Input
 		}
 	};
 </script>
 
 <style>
 	.case-region{width:100%;text-align:left;font-size:16px;}
-	.case-btns{margin:15px 0 20px;}
+	.case-btns{margin:20px 0;}
 	.case-region textarea{width:100%;height:200px;}
 	@media (max-width: 1200px) {
 		.case-region{
