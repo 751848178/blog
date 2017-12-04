@@ -1,7 +1,3 @@
-import "babel-polyfill";
-// eslint-disabled-next-line
-import {Promise} from "es6-promise-polyfill";
-
 const CMPT_CONF = {
 	customers: {
 		About: "@/components/About",
