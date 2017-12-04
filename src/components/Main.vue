@@ -12,8 +12,6 @@
 </template>
 
 <script>
-	import {Input} from 'iview';
-	import Row from "../../node_modules/iview/src/components/grid/row.vue";
 	export default {
 		name: 'Main',
 		data () {
@@ -48,9 +46,9 @@
 			};
 		},
 		components: {
-			Row,
+			Row: resolve => require(['../../node_modules/iview/src/components/grid/row.vue'], resolve),
 			Articles: resolve => require(["@/components/Articles"], resolve),
-			Input,
+			Input: resolve => require(['../../node_modules/iview/src/components/input/input.vue'], resolve),
 			Cards: resolve => require(["@/components/Cards"], resolve)
 		}
 	};
