@@ -45,8 +45,7 @@
 </template>
 
 <script>
-	// eslint-disable-next-line
-	//import CircleMenu from "vue-circle-menu";
+	import CircleMenu from "vue-circle-menu";
 	import {Menu, Icon} from "iview";
 
 	export default {
@@ -69,7 +68,7 @@
 			}
 		},
 		components: {
-			CircleMenu: resolve => require(["vue-circle-menu"], resolve),
+			CircleMenu,
 			Menu,
 			Icon,
 			MenuItem: Menu.Item,
@@ -137,6 +136,7 @@
 	}
 
 	.nav-item img {
+		margin-left:10px;
 		width: 24px;
 		height: 24px;
 	}
