@@ -1,4 +1,4 @@
-const CMPT_CONF = {
+const MODULE_CONF = {
 	customs: {
 		About: "@/components/About",
 		Article: "@/components/Article",
@@ -24,21 +24,21 @@ const CMPT_CONF = {
 let cmpts = {};
 
 const getCmpt = (cmptArr) => {
-	/*let resCmpts = {};
-	cmpts.forEach(cmptName => {
-		if (!this.cmpts[cmptName]) {
-			this.cmpts[cmptName] = resolve => require((this.CMPT_CONF.customs[cmptName] || this.CMPT_CONF.libs[cmptName]), resolve);
+	let resCmpts = cmptArr.map(cmptName => {
+		if (!cmpts[cmptName]) {
+			cmpts[cmptName] = resolve => require((this.MODULE_CONF.customs[cmptName] || this.MODULE_CONF.libs[cmptName]), resolve);
 		}
-		resCmpts[cmptName] = this.cmpts[cmptName];
+		return this.cmpts[cmptName];
 	});
-	return resCmpts;*/
-	return cmptArr.map(cmptName => cmpts[cmptName]);
+	return resCmpts;
+	// return cmptArr.map(cmptName => cmpts[cmptName]);
 };
 
+/*
 const install = () => {
-	CMPT_CONF.forEach((field) => {
-		let cmptNameItem = CMPT_CONF[field];
-		CMPT_CONF.forEach(cmptkey => {
+	MODULE_CONF.forEach((field) => {
+		let cmptNameItem = MODULE_CONF[field];
+		MODULE_CONF.forEach(cmptkey => {
 			let cmptName = cmptNameItem[cmptkey];
 			if (!cmpts[cmptName]) {
 				cmpts[cmptName] = resolve => require(cmptName, resolve);
@@ -46,14 +46,15 @@ const install = () => {
 		});
 	});
 };
+*/
 
 const CmptFactory = () => {
 	install();
 	return {
 		getCmpt,
-		CMPT_CONF,
+		MODULE_CONF,
 		cmpts
-	}
+	};
 };
 
 export default CmptFactory;
