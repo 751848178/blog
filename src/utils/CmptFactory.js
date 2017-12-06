@@ -1,4 +1,4 @@
-const MODULE_CONF = {
+let MODULE_CONF = {
 	customs: {
 		About: "@/components/About",
 		Article: "@/components/Article",
@@ -24,18 +24,21 @@ const MODULE_CONF = {
 let cmpts = {};
 
 const getCmpt = (cmptArr) => {
-	let resCmpts = cmptArr.map(cmptName => {
+	let resCmpts = {};
+	cmptArr.forEach(cmptName => {
 		if (!cmpts[cmptName]) {
-			cmpts[cmptName] = resolve => require((this.MODULE_CONF.customs[cmptName] || this.MODULE_CONF.libs[cmptName]), resolve);
+			console.log(MODULE_CONF);
+			resCmpts[cmptName] = cmpts[cmptName] = resolve => require([(MODULE_CONF.customs[cmptName] || MODULE_CONF.libs[cmptName])], resolve);
 		}
-		return this.cmpts[cmptName];
 	});
 	return resCmpts;
 	// return cmptArr.map(cmptName => cmpts[cmptName]);
 };
 
-/*
-const install = () => {
+/* const install = () => {
+	cmpts = (r => {
+		return r.keys().map(key => r(key));
+	})(require.context('./', true, /^\.\/modules\/((?!\/)[\s\S])+\/route\.js$/))
 	MODULE_CONF.forEach((field) => {
 		let cmptNameItem = MODULE_CONF[field];
 		MODULE_CONF.forEach(cmptkey => {
@@ -45,16 +48,15 @@ const install = () => {
 			}
 		});
 	});
-};
-*/
+}; */
 
-const CmptFactory = () => {
-	install();
+const CmptFactory = (() => {
+	// install();
 	return {
 		getCmpt,
 		MODULE_CONF,
 		cmpts
 	};
-};
+})();
 
 export default CmptFactory;
