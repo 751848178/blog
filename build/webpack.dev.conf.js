@@ -36,6 +36,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),

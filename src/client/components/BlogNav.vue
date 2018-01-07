@@ -79,7 +79,7 @@
 </script>
 
 <style>
-	.logo{width:200px;height:60px;background:url(/static/images/logo.png) center -1px no-repeat;}
+	.logo{width:200px;height:60px;background:url(/images/logo.png) center -1px no-repeat;}
 	.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
 		height:60px;
 	}

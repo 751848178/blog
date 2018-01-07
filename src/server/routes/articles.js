@@ -1,16 +1,13 @@
-<template>
-	<div class="main wrap">
-		<Card class="article">
-			<div slot="title">
-				<h1>文章标题</h1>
-				<div v-if="tags.length > 0" class="article-tags">
-					<Tag v-for="tag in tags" :key="tag.id"><router-link :to="/tag/ + tag.id">{{tag.name}}</router-link></Tag>
-				</div>
-			</div>
-			<div slot="extra" class="date">
-				<Icon type="clock"></Icon>{{new Date().toLocaleDateString()}}
-			</div>
-			<div class="atricle-content">
+const router = require('koa-router')()
+
+router.prefix('/articles')
+
+router.get('/', function (ctx, next) {
+  ctx.body = 'this is a users response!'
+})
+
+router.get('/:id', function (ctx, next) {
+	let article = `
 				<div data-v-07512350="" class="md"><p>Object.defineProperty是ES5中提出的新方法，作用是为对象新添加一个属性或者修改对象中已经存在的属性</p>
 					<h3 id="-">用法</h3>
 					<p> Object.defineProperty(obj, prop, descriptor)</p>
@@ -107,40 +104,12 @@ Object.defineProperty(yeh, 'age', {
 watch(yeh, <span class="hljs-string">"age"</span>)
 yeh.age = <span class="hljs-number">25</span> <span class="hljs-comment">//赋值，触发了set方法，打印“执行了set方法，新的值为25”</span>
 console.log(yeh.age) <span class="hljs-comment">//取值，触发了get方法，先打印“执行了get方法”，再打印“25”</span>
-</code></pre></div>
-			</div>
-		</Card>
-	</div>
-</template>
-<script>
-	import {Card, Tag, Icon} from 'iview';
-	import ICol from "../../node_modules/iview/src/components/grid/col.vue";
-
-	export default {
-		name: "Article",
-		data() {
-			return {
-				tags: (() => {
-					let tags = [];
-					for (let i = 1; i < 11; i++) {
-						tags.push({id: i, name: "标签" + i});
-					}
-					return tags;
-				})()
-			};
-		},
-		components: {
-			ICol,
-			Card,
-			Icon,
-			Tag
-		}
+</code></pre></div>`;
+	ctx.body = {
+		data: article,
+		errorCode: 200,
+		errorMessage: ""
 	};
-</script>
-<style>
-	.article{text-align:left;}
-	.article .article-tags{margin-top:10px;}
-	.article .atricle-content{width:100%;overflow:hidden;}
-	.article .date{margin-top:10px;color:#999;}
-	.article .date i{margin-right:6px;}
-</style>
+})
+
+module.exports = router

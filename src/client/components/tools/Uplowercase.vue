@@ -33,9 +33,9 @@
 			}
 		},
 		components: {
-			Button: resolve => require(['../../../node_modules/iview/src/components/button/button.vue'], resolve),
-			ButtonGroup: resolve => require(['../../../node_modules/iview/src/components/button/button.vue'], resolve).Group,
-			Input: resolve => require(['../../../node_modules/iview/src/components/input/input.vue'], resolve)
+			Button: resolve => require(['../../../../node_modules/iview/src/components/button/button.vue'], resolve),
+			ButtonGroup: resolve => require(['../../../../node_modules/iview/src/components/button/button.vue'], resolve).Group,
+			Input: resolve => require(['../../../../node_modules/iview/src/components/input/input.vue'], resolve)
 		}
 	};
 </script>

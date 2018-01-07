@@ -21,7 +21,7 @@
 
 <script>
 	import {Card, Tag} from 'iview';
-	import ICol from "../../node_modules/iview/src/components/grid/col.vue";
+	import ICol from "../../../node_modules/iview/src/components/grid/col.vue";
 	export default {
 		name: 'BArticle',
 		props: ["list"],

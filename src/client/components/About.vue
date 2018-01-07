@@ -24,7 +24,7 @@
 
 <script>
 	import {Card} from 'iview';
-	import ICol from "../../node_modules/iview/src/components/grid/col.vue";
+	import ICol from "../../../node_modules/iview/src/components/grid/col.vue";
 	export default {
 		name: "About",
 		data () {
