@@ -103,5 +103,8 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
-	]
+	],
+	externals: {
+		iview: 'iview'
+	}
 }
