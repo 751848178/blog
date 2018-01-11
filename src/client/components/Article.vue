@@ -138,7 +138,7 @@ console.log(yeh.age) <span class="hljs-comment">//取值，触发了get方法，
 			Tag
 		},
 		created() {
-			axios.get("/articles/1").then(result => {
+			axios.get("/api/articles/1").then(result => {
 				console.log(result.data);
 				this.article = result.data.data;
 			});

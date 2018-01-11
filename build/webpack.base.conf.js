@@ -10,6 +10,12 @@ function resolve(dir) {
 	return path.join(__dirname, '..', dir)
 }
 
+let addPlugins = process.env.NODE_ENV === 'production' ? [] : [new HtmlWebpackPlugin({
+	filename: 'index.html',
+	template: 'index.html',
+	inject: true
+})]
+
 module.exports = {
 	context: path.resolve(__dirname, '../'),
 	entry: {
@@ -28,7 +34,9 @@ module.exports = {
 			? config.build.assetsPublicPath
 			: config.dev.assetsPublicPath*/
 		filename: 'bundle.js',
-		publicPath: "/",// 'http://localhost:3000/build/',
+		publicPath: process.env.NODE_ENV === 'production'
+			? config.build.assetsPublicPath
+			: config.dev.assetsPublicPath,// 'http://localhost:3000/build/',
 		// webpack-dev-server伺服的文件是相对publicPath这个路径的
 		chunkFilename: '[name].chunk.js'
 	},
@@ -98,11 +106,7 @@ module.exports = {
 				NODE_ENV: JSON.stringify(process.env.NODE_ENV)
 			}
 		}),
-		new HtmlWebpackPlugin({
-			filename: 'index.html',
-			template: 'index.html',
-			inject: true
-		}),
+		...addPlugins
 	],
 	externals: {
 		iview: 'iview'

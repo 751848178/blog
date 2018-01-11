@@ -21,7 +21,7 @@
 		<div class="nav-bottom">
 			<div class="nav-item">
 				<router-link to="/">
-					<img src="../assets/logo.png">
+					<img src="/images/logo.png">
 					<label>首页</label>
 				</router-link>
 			</div>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="nav-item">
 				<router-link to="/foo">
-					<img src="../assets/logo.png">
+					<img src="/images/logo.png">
 					<label>我的</label>
 				</router-link>
 			</div>

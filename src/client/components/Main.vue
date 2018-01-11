@@ -12,7 +12,6 @@
 </template>
 
 <script>
-	import CmptFacroty from '../utils/CmptFactory';
 	export default {
 		name: 'Main',
 		data () {
@@ -52,10 +51,6 @@
 			Articles: resolve => require(["@/components/Articles"], resolve),
 			Input: resolve => require(['../../../node_modules/iview/src/components/input/input.vue'], resolve),
 			Cards: resolve => require(["@/components/Cards"], resolve)
-		},
-		beforeCreate() {
-			console.log(CmptFacroty);
-			console.log(CmptFacroty.getCmpt(["Row", "Articles", "Input", "Cards"]));
 		}
 	};
 </script>
