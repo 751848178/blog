@@ -6,9 +6,10 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const path = require('path')
-const dev = require('./dev')
 
 if (process.argv.join("").split("--").indexOf("dev") != -1) {
+	const dev = require('./dev')
+	console.log("==========================================================================================");
 	app.use(dev.webpackDev);
 	app.use(dev.webpackHot);
 	let rootPath = path.resolve(__dirname, "../../");
