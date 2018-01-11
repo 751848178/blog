@@ -1,12 +1,12 @@
 const router = require('koa-router')()
 
-router.prefix('/articles')
+router.prefix('/api')
 
-router.get('/', function (ctx, next) {
+router.get('/articles', function (ctx, next) {
   ctx.body = 'this is a users response!'
 })
 
-router.get('/:id', function (ctx, next) {
+router.get('/articles/:id', function (ctx, next) {
 	let article = `
 				<div data-v-07512350="" class="md"><p>Object.defineProperty是ES5中提出的新方法，作用是为对象新添加一个属性或者修改对象中已经存在的属性</p>
 					<h3 id="-">用法</h3>
