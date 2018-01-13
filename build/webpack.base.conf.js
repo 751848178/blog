@@ -5,6 +5,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 function resolve(dir) {
 	return path.join(__dirname, '..', dir)
@@ -33,7 +34,8 @@ module.exports = {
 		publicPath: process.env.NODE_ENV === 'production'
 			? config.build.assetsPublicPath
 			: config.dev.assetsPublicPath*/
-		filename: 'bundle.js',
+		path: config.build.assetsRoot,
+		filename: '[name].js',
 		publicPath: process.env.NODE_ENV === 'production'
 			? config.build.assetsPublicPath
 			: config.dev.assetsPublicPath,// 'http://localhost:3000/build/',
@@ -106,6 +108,15 @@ module.exports = {
 				NODE_ENV: JSON.stringify(process.env.NODE_ENV)
 			}
 		}),
+
+		// copy custom static assets
+		new CopyWebpackPlugin([
+			{
+				from: path.resolve(__dirname, '../static'),
+				to: config.build.assetsSubDirectory,
+				ignore: ['.*']
+			}
+		]),
 		...addPlugins
 	],
 	externals: {

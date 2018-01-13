@@ -21,7 +21,7 @@
 		<div class="nav-bottom">
 			<div class="nav-item">
 				<router-link to="/">
-					<img src="/images/logo.png">
+					<img src="/static/images/logo.png">
 					<label>首页</label>
 				</router-link>
 			</div>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="nav-item">
 				<router-link to="/foo">
-					<img src="/images/logo.png">
+					<img src="/static/images/logo.png">
 					<label>我的</label>
 				</router-link>
 			</div>
@@ -79,7 +79,7 @@
 </script>
 
 <style>
-	.logo{width:200px;height:60px;background:url(/images/logo.png) center -1px no-repeat;}
+	.logo{width:200px;height:60px;background:url(/static/images/logo.png) center -1px no-repeat;}
 	.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
 		height:60px;
 	}
