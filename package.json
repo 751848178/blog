@@ -24,9 +24,7 @@
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
     "mysql": "github:mysqljs/mysql",
-    "pug": "^2.0.0-rc.1",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "pug": "^2.0.0-rc.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -70,6 +68,8 @@
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+	"vue": "^2.5.2",
+	"vue-router": "^3.0.1",
     "url-loader": "^0.5.8",
     "vue-circle-menu": "^1.1.1",
     "vue-loader": "^13.3.0",
