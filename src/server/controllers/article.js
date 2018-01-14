@@ -4,7 +4,7 @@ class ArticleController{
 	async getArticleById(ctx, next) {
 		let article = await articleService.getArticleById(1);
 		ctx.body = {
-			data: article[0],
+			data: article,
 			errorCode: 200,
 			errorMessage: ""
 		};
