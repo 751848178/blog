@@ -1,6 +1,6 @@
 <template>
 	<div class="main wrap">
-		<i-col span="24">
+		<Col span="24">
 			<Card class="about">
 				<h1 class="title">关于这个网站</h1>
 				<p class="about-me">大家好，我是兴勃，一位前端Coder，为了不落伍，目前正在学习Vue.js和ES6，有时也会使用node.js，不过属于初学性质！</p>
@@ -18,20 +18,20 @@
 					<a target="_blank" href="https://github.com/751848178">https://github.com/751848178</a>
 				</p>
 			</Card>
-		</i-col>
+		</Col>
 	</div>
 </template>
 
 <script>
 	import {Card} from 'iview';
-	import ICol from "../../../node_modules/iview/src/components/grid/col.vue";
+	import {Col} from "../../../node_modules/iview/src/components/grid";
 	export default {
 		name: "About",
 		data () {
 			return {};
 		},
 		components: {
-			ICol,
+			Col,
 			Card
 		}
 	};

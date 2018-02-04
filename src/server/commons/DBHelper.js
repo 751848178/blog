@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const dbSetting = require('../config/database.js');
 
 class DBHelper {
+
 	constructor(connectionPool) {
 		this.connectionPool = mysql.createPool({
 			'host' : dbSetting.host,
@@ -71,13 +72,31 @@ class DBHelper {
 		return results;
 	}
 
-	async findById(sql, args) {
+	async queryById(sql, args) {
 		let sqlOpts = {sql, args};
 		let result = await this.execQuery(sqlOpts);
 		return result[0];
 	}
 
-	async findList(sql, args) {
+	async query(sql, args) {
+		let sqlOpts = {sql, args};
+		let result = await this.execQuery(sqlOpts);
+		return result;
+	}
+
+	async insert(sql, args) {
+		let sqlOpts = {sql, args};
+		let result = await this.execQuery(sqlOpts);
+		return result;
+	}
+
+	async update(sql, args) {
+		let sqlOpts = {sql, args};
+		let result = await this.execQuery(sqlOpts);
+		return result;
+	}
+
+	async delete(sql, args) {
 		let sqlOpts = {sql, args};
 		let result = await this.execQuery(sqlOpts);
 		return result;

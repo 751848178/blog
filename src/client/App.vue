@@ -1,6 +1,6 @@
 <template>
 	<div id="app" class="clearfix">
-		<blog-nav></blog-nav>
+		<blog-nav v-if="$route.path.indexOf('/admin') == -1"></blog-nav>
 		<router-view/>
 	</div>
 </template>

@@ -42,6 +42,16 @@ export default new Router({
 			path: '/tools/uplowercase',
 			name: 'Uplowercase',
 			component: resolve => require(["@/components/tools/Uplowercase"], resolve)
+		},
+		{
+			path: '/admin',
+			name: 'Admin',
+			component: resolve => require(["@/components/admin/_layout"], resolve)
+		},
+		{
+			path: '/admin/login',
+			name: 'Login',
+			component: resolve => require(["@/components/admin/Login"], resolve)
 		}
 	]
 });

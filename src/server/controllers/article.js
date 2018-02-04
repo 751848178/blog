@@ -1,4 +1,5 @@
 const articleService = require("../services/articleService");
+const fs = require("fs");
 
 class ArticleController{
 	async getArticleById(ctx, next) {

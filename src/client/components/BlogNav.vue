@@ -15,6 +15,9 @@
 					<MenuItem name="/tools/uplowercase">
 						<router-link to="/tools/uplowercase">工具</router-link>
 					</MenuItem>
+					<MenuItem name="/admin/login">
+						<router-link to="/admin/login">管理</router-link>
+					</MenuItem>
 				</div>
 			</Menu>
 		</div>

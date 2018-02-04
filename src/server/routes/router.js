@@ -1,12 +1,6 @@
-const router = require('koa-router')()
-const articleCtrl = require("../controllers/article");
+const article = require('./article');
+const admin = require('./admin');
 
-router.prefix('/api')
+let router = [article, admin];
 
-router.get('/article', function (ctx, next) {
-  ctx.body = 'this is a users response!'
-})
-
-router.get('/article/:id', articleCtrl.getArticleById)
-
-module.exports = router
+module.exports = router;
