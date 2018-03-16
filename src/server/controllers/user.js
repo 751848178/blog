@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 
 class UserController{
 	async getUserById(ctx, next) {
+		await next();
 		let user = await userService.getUserById(ctx.params.id);
 		ctx.body = {
 			data: user,
@@ -13,6 +14,7 @@ class UserController{
 		};
 	}
 	async getAll(ctx, next) {
+		await next();
 		let userList = await userService.getAllUsers();
 		ctx.body = {
 			data: userList,
@@ -21,6 +23,7 @@ class UserController{
 		};
 	}
 	async login(ctx, next) {
+		await next();
 		let params = ctx.request.body;
 		let loginInfo = await userService.login(params.username, params.password);
 		let resBody = {

@@ -5,11 +5,11 @@
 				<Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
 					<MenuItem name="1-1">
 						<Icon type="ios-navigate"></Icon>
-						<span>网站设置</span>
+						<router-link to="/admin/setting">网站设置</router-link>
 					</MenuItem>
 					<MenuItem name="1-2">
 						<Icon type="search"></Icon>
-						<span>文章管理</span>
+						<router-link to="/admin/article">文章管理</router-link>
 					</MenuItem>
 					<MenuItem name="1-3">
 						<Icon type="settings"></Icon>
@@ -22,7 +22,7 @@
 					<Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '20px 20px 0'}" type="navicon-round" size="24"></Icon>
 				</Header>
 				<Content :style="{margin: '20px', background: '#fff', minHeight: 'calc(100vh - 106px)'}">
-					Content
+					<router-view/>
 				</Content>
 			</Layout>
 		</Layout>
