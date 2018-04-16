@@ -14,6 +14,8 @@
 </template>
 
 <script>
+	import Button from '../../../../node_modules/iview/src/components/button/button';
+	import Input from '../../../../node_modules/iview/src/components/input/input';
 	export default {
 		name: "Uplowercase",
 		data () {
@@ -31,8 +33,8 @@
 			}
 		},
 		components: {
-			Button: resolve => require(['../../../../node_modules/iview/src/components/button/button.vue'], resolve),
-			Input: resolve => require(['../../../../node_modules/iview/src/components/input/input.vue'], resolve)
+			Button, // : resolve => require(['../../../../node_modules/iview/src/components/button/button.vue'], resolve),
+			Input // : resolve => require(['../../../../node_modules/iview/src/components/input/input.vue'], resolve)
 		}
 	};
 </script>

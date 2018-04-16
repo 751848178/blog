@@ -12,6 +12,10 @@
 </template>
 
 <script>
+	import Row from '../../../node_modules/iview/src/components/grid/row';
+	import Articles from "@/components/Articles";
+	import Input from '../../../node_modules/iview/src/components/input/input';
+	import Cards from "@/components/Cards";
 	export default {
 		name: 'Main',
 		data () {
@@ -47,10 +51,10 @@
 		},
 		components: {
 			/* ...CmptFacroty.getCmpt(["Row", "Articles", "Input", "Cards"]) */
-			Row: resolve => require(['../../../node_modules/iview/src/components/grid/row.vue'], resolve),
-			Articles: resolve => require(["@/components/Articles"], resolve),
-			Input: resolve => require(['../../../node_modules/iview/src/components/input/input.vue'], resolve),
-			Cards: resolve => require(["@/components/Cards"], resolve)
+			Row, // : resolve => require(['../../../node_modules/iview/src/components/grid/row.vue'], resolve),
+			Articles, // : resolve => require(["@/components/Articles"], resolve),
+			Input, // : resolve => require(['../../../node_modules/iview/src/components/input/input.vue'], resolve),
+			Cards // : resolve => require(["@/components/Cards"], resolve)
 		}
 	};
 </script>

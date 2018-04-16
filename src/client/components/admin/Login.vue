@@ -22,6 +22,7 @@
 	import * as axios from "axios";
 	import {Card, Input, Form, FormItem} from "iview";
 	import {Col} from "../../../../node_modules/iview/src/components/grid";
+	import Button from '../../../../node_modules/iview/src/components/button/button';
 	export default {
 		name: "Login",
 		data () {
@@ -46,7 +47,7 @@
 			Input,
 			Form,
 			FormItem,
-			Button: resolve => require(['../../../../node_modules/iview/src/components/button/button.vue'], resolve)
+			Button // : resolve => require(['../../../../node_modules/iview/src/components/button/button.vue'], resolve)
 		},
 		methods: {
 			handleSubmit (name) {

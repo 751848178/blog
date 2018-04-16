@@ -7,6 +7,30 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const path = require('path')
 const jwt = require('jsonwebtoken')
+const history = require("connect-history-api-fallback");
+
+app.use(require('koa-static')("/"))
+app.use(async (ctx, next) => {
+	/*console.log(ctx.path);
+	console.log(ctx.path.indexOf("/api") == -1);
+	console.log(ctx.path.indexOf("/static") == -1);
+	console.log(ctx.path.indexOf("/__webpack_hmr") != -1);
+	console.log(!ctx.path.match(/^.+\.js/g));
+	console.log("===============");*/
+	if (ctx.path.indexOf("/api") == -1 && ctx.path.indexOf("/static") == -1 && !ctx.path.match(/^.+\.js/g)) {
+		history({
+			rewrites: [
+				{
+					from: /^\/.*$/,
+					to: '/'
+				}
+			],
+			verbose: true, // 打出转发日志
+			index: "/index.html"
+		})(ctx, null, () => {});
+	}
+	await next();
+});
 
 if (process.argv.join("").split("--").indexOf("dev") != -1) {
 	const dev = require('./dev')
@@ -43,12 +67,12 @@ app.use(async(ctx, next) => {
 		errorCode: 200,
 		errorMessage: ""
 	};
-	else if(flag || ctx.path == "/api/admin/login") await next();
-	else ctx.body = {
+	else if(flag || ctx.path != "/api/admin/login") ctx.body = {
 		data: "",
 		errorCode: 204,
 		errorMessage: "请登陆后操作"
 	};
+	await next();
 })
 
 const routers = require('./routes/router')

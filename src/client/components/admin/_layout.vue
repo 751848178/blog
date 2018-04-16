@@ -30,6 +30,13 @@
 </template>
 
 <script>
+	import Layout from "../../../../node_modules/iview/src/components/layout/layout";
+	import Sider from "../../../../node_modules/iview/src/components/layout/sider";
+	import Menu from "../../../../node_modules/iview/src/components/menu/menu";
+	import MenuItem from "../../../../node_modules/iview/src/components/menu/menu-item";
+	import Icon from "../../../../node_modules/iview/src/components/icon/icon";
+	import Header from "../../../../node_modules/iview/src/components/layout/header";
+	import Content from "../../../../node_modules/iview/src/components/layout/content";
     export default {
         name: "_layout",
 		data () {
@@ -57,13 +64,13 @@
 			}
 		},
 		components: {
-			Layout: resolve => require(["../../../../node_modules/iview/src/components/layout/layout"], resolve),
-			Sider: resolve => require(["../../../../node_modules/iview/src/components/layout/sider"], resolve),
-			Menu: resolve => require(["../../../../node_modules/iview/src/components/menu/menu"], resolve),
-			MenuItem: resolve => require(["../../../../node_modules/iview/src/components/menu/menu-item"], resolve),
-			Icon: resolve => require(["../../../../node_modules/iview/src/components/icon/icon"], resolve),
-			Header: resolve => require(["../../../../node_modules/iview/src/components/layout/header"], resolve),
-			Content: resolve => require(["../../../../node_modules/iview/src/components/layout/content"], resolve)
+			Layout, // : resolve => require(["../../../../node_modules/iview/src/components/layout/layout"], resolve),
+			Sider, // : resolve => require(["../../../../node_modules/iview/src/components/layout/sider"], resolve),
+			Menu, // : resolve => require(["../../../../node_modules/iview/src/components/menu/menu"], resolve),
+			MenuItem, // : resolve => require(["../../../../node_modules/iview/src/components/menu/menu-item"], resolve),
+			Icon, // : resolve => require(["../../../../node_modules/iview/src/components/icon/icon"], resolve),
+			Header, // : resolve => require(["../../../../node_modules/iview/src/components/layout/header"], resolve),
+			Content // : resolve => require(["../../../../node_modules/iview/src/components/layout/content"], resolve)
 		}
     };
 </script>
