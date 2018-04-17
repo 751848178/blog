@@ -9,4 +9,6 @@ router.get('/article', function (ctx, next) {
 
 router.get('/article/:id', articleCtrl.getArticleById);
 
+router.post('/article/addWordPract', articleCtrl.addWordPracticeArticle);
+
 module.exports = router;
